@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+
+		.boxs {
+			border-radius: 50px;
+			height: 70px;
+			width: 70px;
+			background-color: white;
+			border: solid;
+			position: absolute;
+			text-align: center;
+			
+			transition: 1s
+		}
+		.text{
+			color: orange
+		}
+		.text_b{
+			color: orange;
+			font-family: arial;
+			border: bold
+		}
+		.vybor{
+			display: none;
+			transition: 1s
+			
+		}
+		.btn{
+			color: black;
+			background-color: red;
+			 position: absolute;
+		}
+		.text1_d{
+			display: none;
+			color: orange
+
+		}
+		.text2_d{
+			display: none;
+			color: orange
+
+		}
+		.text3_d{
+			display: none;
+			color: orange
+		}
+		
+		.img1_d{
+			display: none
+		}
+		.img2_d{
+			display: none
+		}
+		.img3_d{
+			display: none
+		}
+		
+		.players{
+			position: absolute;
+		}
+		.HP{
+			display: none
+		}
+		.hp1{
+			display: none
+		}
+		.hp2{
+			display: none
+		}
+		.hp3{
+			display: none
+		}
+		.img{
+			border-radius: 50px;
+		}
+
+	</style>
+</head>
+<body style="background-image: url(fon.jpg); background-size: 100%; ">
+	
+	<div class="play col-10 mx-auto " style="margin-top: 300px; position: absolute;">
+		
+		<div class="pravilo col-5" style=" ">
+			<h1 class="text_b">Прочитайте внимательно правило игры!!!</h1>
+			<p class="text">Здравствуйте, дорогие игроки! Вы пришли в игру под названием "Гравити Фолз, настолка". Во первых, вас ждёт путь от старта до финиша, но не думайте, что всё так легко, вас будут ждать ловушки, изза которых вы потеряете жизнь, и не сможете дальше ходить, либо ловушка, которая возвращает обратно в старт, но есть и бонусные места, в которых вы получите увеличение жизни, или же пройдётё вперёд на n шагов,так что, попытайтесь, пусть удача всегда будет на вашей стороне</p>
+			<button class="btn">Далее</button>
+			
+			
+		</div>
+		<div class="vybor col-5">
+			<h1 class=" text_b">Выберите количество игроков</h1>
+			<p class="p2 text">2 игрока</p>
+			<p class="p3 text">3 игрока</p>
+			
+			
+		</div>
+		
+	</div>
+	<div  class="col-3 mt-5 ml-3  players" >
+		<div class="player1_d d-flex">
+			<p class="text1_d">Игрок 1</p>
+			<img src="1.png" class="img1_d" style="height: 70px">
+			<p class="text HP">HP<p class="hp1 text">50</p></p>
+			
+			
+		</div>
+		<div class="player2_d d-flex" >
+			<p class="text2_d">Игрок 2</p>
+			<img src="2.png" class="img2_d" style=" height: 70px"> 
+			<p class="text HP">HP<p class="hp2 text">50</p></p>
+			
+		</div>
+		<div class="player3_d d-flex">
+			 <p class="text3_d">Игрок 3</p>
+			 <img src="3.png" class="img3_d" style=" height: 70px">
+			 <p class="text HP">HP<p class="hp3 text">50</p></p>
+		</div>	
+		
+	</div>
+	
+	
+	<div class="content col-11 mx-auto" style="display: none; position: absolute; " >
+		
+		
+		<div class="boxs bg-warning" style="margin-left: 640px">
+			<p style="text-align: center;">Start</p>
+			<p style="text-align: center; margin-bottom: 20px">Finish</p>
+		</div>
+		<div class="boxs" style="margin-left: 740px">1</div>
+		<div class="boxs" style="margin-left: 840px">2</div>
+		<div class="boxs" style="margin-left: 940px;margin-top: 15px">3</div>
+		<div class="boxs" style="margin-left: 1050px;margin-top: 30px">
+			<img src="good2.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 1160px;margin-top: 65px">5</div>
+		<div class="boxs" style="margin-left: 1270px;margin-top: 100px">6</div>
+		<div class="boxs" style="margin-left: 1360px;margin-top: 170px">
+			<img src="bad3.gif" class="img w-100 h-100">
+		</div>
+		<div class="boxs" style="margin-left: 1440px;margin-top: 240px">8</div>
+		<div class="boxs" style="margin-left: 1480px;margin-top: 340px">9</div>
+		<div class="boxs" style="margin-left: 1500px;margin-top: 440px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 1500px;margin-top: 550px">11</div>
+		<div class="boxs" style="margin-left: 1475px;margin-top: 650px">
+			<img src="bad3.gif" class="img w-100 h-100">
+		</div>
+		<div class="boxs" style="margin-left: 1430px;margin-top: 740px">
+			<img src="bad.gif" class="img w-100"></div>
+		<div class="boxs" style="margin-left: 1370px;margin-top: 810px">14</div>
+		<div class="boxs" style="margin-left: 1300px;margin-top: 850px">15</div>
+		<div class="boxs" style="margin-left: 1210px;margin-top: 870px">16</div>
+		<div class="boxs" style="margin-left: 1110px;margin-top: 875px">
+			<img src="good2.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 1010px;margin-top: 875px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 910px;margin-top: 875px">19</div>
+		<div class="boxs" style="margin-left: 810px;margin-top: 875px">
+			<img src="bad.gif" class="img w-100"></div>
+		<div class="boxs" style="margin-left: 710px;margin-top: 875px">21</div>
+		<div class="boxs" style="margin-left: 610px;margin-top: 875px">
+			<img src="bad3.gif" class="img w-100 h-100">
+		</div>
+		<div class="boxs" style="margin-left: 510px;margin-top: 875px">
+			<img src="good2.gif" class="img w-100  h-100"></div>
+		<div class="boxs" style="margin-left: 410px;margin-top: 875px">24</div>
+		<div class="boxs" style="margin-left: 310px;margin-top: 875px">
+			<img src="bad2.gif" class="img w-100  h-100"></div>
+		<div class="boxs" style="margin-left: 310px;margin-top: 790px">26</div>
+		<div class="boxs" style="margin-left: 410px;margin-top: 780px">27</div>
+		<div class="boxs" style="margin-left: 510px;margin-top: 775px">
+			<img src="bad.gif" class="img w-100"></div>
+		<div class="boxs" style="margin-left: 610px;margin-top: 770px">29</div>
+		<div class="boxs" style="margin-left: 710px;margin-top: 765px">30</div>
+		<div class="boxs" style="margin-left: 810px;margin-top: 760px">31</div>
+		<div class="boxs" style="margin-left: 750px;margin-top: 705px">32</div>
+		<div class="boxs" style="margin-left: 650px;margin-top: 700px">33</div>
+		<div class="boxs" style="margin-left: 550px;margin-top: 699px">
+			<img src="bad.gif" class="img w-100"></div>
+		<div class="boxs" style="margin-left: 450px;margin-top: 698px">35</div>
+		<div class="boxs" style="margin-left: 350px;margin-top: 697px">36</div>
+		<div class="boxs" style="margin-left: 250px;margin-top: 696px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 150px;margin-top: 695px">38</div>
+		<div class="boxs" style="margin-left: 150px;margin-top: 615px">
+			<img src="bad3.gif" class="img w-100 h-100">
+		</div>
+		<div class="boxs" style="margin-left: 250px;margin-top: 605px">40</div>
+		<div class="boxs" style="margin-left: 350px;margin-top: 600px">41</div>
+		<div class="boxs" style="margin-left: 450px;margin-top: 595px">42</div>
+		<div class="boxs" style="margin-left: 550px;margin-top: 590px">43</div>
+		<div class="boxs" style="margin-left: 650px;margin-top: 585px">
+			<img src="bad3.gif" class="img w-100 h-100">
+		</div>
+		<div class="boxs" style="margin-left: 750px;margin-top: 575px">45</div>
+		<div class="boxs" style="margin-left: 690px;margin-top: 520px">46</div>
+		<div class="boxs" style="margin-left: 590px;margin-top: 515px">47</div>
+		<div class="boxs" style="margin-left: 490px;margin-top: 514px">
+			<img src="bad.gif" class="img w-100"></div>
+		<div class="boxs" style="margin-left: 390px;margin-top: 513px">49</div>
+		<div class="boxs" style="margin-left: 290px;margin-top: 512px">
+			<img src="bad2.gif" class="img w-100 h-100"></div>
+		<div class="boxs" style="margin-left: 190px;margin-top: 511px">51</div>
+		<div class="boxs" style="margin-left: 90px;margin-top: 510px">52</div>
+		<div class="boxs" style="margin-left: 90px;margin-top: 425px">
+			<img src="bad4.gif" class="img w-100 h-100"></div>
+		<div class="boxs" style="margin-left: 190px;margin-top: 415px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 290px;margin-top: 410px">55</div>
+		<div class="boxs" style="margin-left: 390px;margin-top: 405px">
+			<img src="bad3.gif" class="img w-100 h-100"></div>
+		<div class="boxs" style="margin-left: 490px;margin-top: 400px">57</div>
+		<div class="boxs" style="margin-left: 590px;margin-top: 395px">58</div>
+		<div class="boxs" style="margin-left: 690px;margin-top: 375px">59</div>
+		<div class="boxs" style="margin-left: 620px;margin-top: 320px">60</div>
+		<div class="boxs" style="margin-left: 520px;margin-top: 315px">
+			<img src="good2.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 420px;margin-top: 314px">62</div>
+		<div class="boxs" style="margin-left: 320px;margin-top: 313px">63</div>
+		<div class="boxs" style="margin-left: 220px;margin-top: 312px">64</div>
+		<div class="boxs" style="margin-left: 220px;margin-top: 230px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 320px;margin-top: 225px">
+			<img src="bad.gif" class="img w-100"></div>
+		<div class="boxs" style="margin-left: 420px;margin-top: 224px">67</div>
+		<div class="boxs" style="margin-left: 520px;margin-top: 223px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 620px;margin-top: 222px">69</div>
+		<div class="boxs" style="margin-left: 720px;margin-top: 221px">
+			<img src="bad3.gif" class="img w-100 h-100">
+		</div>
+		<div class="boxs" style="margin-left: 820px;margin-top: 220px">71</div>
+		<div class="boxs" style="margin-left: 920px;margin-top: 219px">
+			<img src="good1.gif" class="img w-100  h-100">
+		</div>
+		<div class="boxs" style="margin-left: 1020px;margin-top: 218px">73</div>
+		<div class="boxs" style="margin-left: 970px;margin-top: 157px">74</div>
+		<div class="boxs" style="margin-left: 870px;margin-top: 142px">
+			<img src="bad2.gif" class="img w-100  h-100"></div>
+		<div class="boxs" style="margin-left: 770px;margin-top: 132px">76</div>
+		<div class="boxs" style="margin-left: 670px;margin-top: 122px">77</div>
+		<div class="boxs" style="margin-left: 600px;margin-top: 85px">78</div>
+	
+		
+		
+		
+		
+
+		
+		
+
+	</div>	
+		
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+	let p2=document.querySelector(".p2");
+	let p3=document.querySelector(".p3");
+	
+	let HP=document.querySelectorAll(".HP");
+	let hp1=document.querySelector(".hp1");
+	let hp2=document.querySelector(".hp2");
+	let hp3=document.querySelector(".hp3");
+	let box=document.querySelectorAll(".boxs");
+	let btn = document.querySelector(".btn");
+	let pravilo = document.querySelector(".pravilo");
+	let vybor= document.querySelector(".vybor");
+	let content= document.querySelector(".content");
+
+	let text1 = document.querySelector(".text1_d");
+	let text2 = document.querySelector(".text2_d");
+	let text3 = document.querySelector(".text3_d");
+	
+	let img1 = document.querySelector(".img1_d");
+	let img2 = document.querySelector(".img2_d");
+	let img3 = document.querySelector(".img3_d");
+	let god=0;
+	let gom=0;
+	let go=0
+	let sum1=50
+	let sum2=50
+	let sum3=50
+	
+
+	btn.onclick = function(){
+		vybor.style.display = "block";
+		pravilo.style.display = "none";
+
+	}
+	p2.onclick = function(){
+		content.style.display = "block";
+		vybor.style.display = "none";
+
+		text1.style.display="block";
+		img1.style.display="block";
+		text2.style.display="block";
+		img2.style.display="block";
+		HP[1].style.display = "block";
+		HP[0].style.display = "block";
+		hp1.style.display = "block";
+		hp2.style.display = "block";
+		
+		
+	
+	}
+	
+
+		
+		
+	
+	p3.onclick = function(){
+		content.style.display = "block";
+		vybor.style.display = "none";
+
+		text1.style.display="block";
+		img1.style.display="block";
+		text2.style.display="block";
+		img2.style.display="block";
+		text3.style.display="block";
+		img3.style.display="block";
+		HP[1].style.display = "block";
+		HP[2].style.display = "block";
+		HP[0].style.display = "block";
+		hp1.style.display = "block";
+		hp2.style.display = "block";
+		hp3.style.display = "block";
+		
+		
+	}
+	img1.onclick = function(){
+
+		
+			let num=Math.random()*6;
+			num=Math.round(num);
+			
+			box[god].style.backgroundImage = "none";
+			god=god+num;
+
+			alert("Выпало "+num+" иди на клетку "+god);
+			box[god].style.backgroundImage = "url(1.png)";
+			box[god].style.backgroundSize = "100% 100%";
+			
+			if (god ==25 || god ==50|| god ==75) {
+				box[god].style.backgroundImage = "none"
+				alert("возвращайся на 20 шагов назад, и ты получил урон -5");
+				god=god-20;
+				box[god].style.backgroundImage = "url(1.png)";
+				box[god].style.backgroundSize = "100% 100%";
+
+				sum1=sum1-5;
+				hp1.innerHTML = sum1
+
+				
+			}
+			if (god==13||god==20||god==28) {
+				box[god].style.backgroundImage = "none"
+				alert("возвращайся на 4 шага назад");
+				god=god-4;
+				box[god].style.backgroundImage = "url(1.png)";
+				box[god].style.backgroundSize = "100% 100%";
+				sum1=sum1-2;
+				hp1.innerHTML = sum1
+			}
+			if (god==34||god==66||god==48) {
+				box[god].style.backgroundImage = "none"
+				alert("возвращайся на 2 шага назад");
+				god=god-2;
+				box[god].style.backgroundImage = "url(1.png)";
+				box[god].style.backgroundSize = "100% 100%";
+				sum1=sum1-1;
+				hp1.innerHTML = sum1
+
+			}
+			if (god==7||god==12||god==22||god==44||god==39||god==56||god==70) {
+				box[god].style.backgroundImage = "none";
+				alert("жизнь -3");
+				god=god-1;
+				box[god].style.backgroundImage = "url(1.png)";
+				box[god].style.backgroundSize = "100% 100%";
+				sum1=sum1-3;
+				hp1.innerHTML = sum1;
+
+			}
+			if (god==53) {
+				box[god].style.backgroundImage = "none";
+				alert("к сожалению, ты не сможешь дальше играть(((");
+				text1.style.display="none";
+				img1.style.display="none";
+				hp1.style.display = "none";
+				HP[0].style.display = "none"
+
+				
+
+			}
+			if (god==23||god==17||god==4|| god==61) {
+				box[god].style.backgroundImage = "none"
+				alert("иди на 10 шагов вперёд");
+				god=god+10;
+				box[god].style.backgroundImage = "url(1.png)";
+				box[god].style.backgroundSize = "100% 100%";
+
+				
+
+			}
+			
+			if (god==10||god==65||god==37||god==54||god==68||god==72||god==18) {
+				box[god].style.backgroundImage = "none"
+				alert("Ураа, +1 жизнь");
+				sum1=sum1+1;
+				hp1.innerHTML = sum1;
+			}
+			if (god==79||god==80||god==81||god==82||god==83||god==84||god==85) {
+				box[god].style.backgroundImage = "none";
+				alert("игрок 1 выиграл, конец игры");
+				
+
+				
+
+			}
+
+
+		
+		}
+
+		img2.onclick = function(){
+		
+			box[gom].style.backgroundImage = "none";
+			let num=Math.random()*6;
+			num=Math.round(num);
+			gom=gom+num;
+			alert("Выпало "+num+" иди на клетку "+gom);
+			box[gom].style.backgroundImage = "url(2.png)";
+			box[gom].style.backgroundSize = "100% 100%";
+			
+			if (gom ==25 || gom ==50|| gom ==75) {
+				box[gom].style.backgroundImage = "none"
+				alert("возвращайся на 20 шагов назад, и ты получил урон -5");
+				gom=gom-20;
+				box[gom].style.backgroundImage = "url(2.png)";
+				box[gom].style.backgroundSize = "100% 100%";
+
+				sum2=sum2-5;
+				hp2.innerHTML = sum2
+
+				
+			}
+			if (gom==13||gom==20||gom==28) {
+				box[gom].style.backgroundImage = "none"
+				alert("возвращайся на 4 шага назад");
+				gom=gom-4;
+				box[gom].style.backgroundImage = "url(2.png)";
+				box[gom].style.backgroundSize = "100% 100%";
+				sum2=sum2-2;
+				hp2.innerHTML = sum2
+			}
+			if (gom==34||gom==66||gom==48) {
+				box[gom].style.backgroundImage = "none"
+				alert("возвращайся на 2 шага назад");
+				gom=gom-2;
+				box[gom].style.backgroundImage = "url(2.png)";
+				box[gom].style.backgroundSize = "100% 100%";
+				sum2=sum2-1;
+				hp2.innerHTML = sum2
+
+			}
+			if (gom==7||gom==12||gom==22||gom==44||gom==39||gom==56||gom==70) {
+				box[gom].style.backgroundImage = "none";
+				alert("жизнь -3");
+				gom=gom-1;
+				box[gom].style.backgroundImage = "url(2.png)";
+				box[gom].style.backgroundSize = "100% 100%";
+				sum2=sum2-3;
+				hp2.innerHTML = sum2;
+
+			}
+			if (gom==53) {
+				box[gom].style.backgroundImage = "none";
+				alert("к сожалению, ты не сможешь дальше играть(((");
+				text2.style.display="none";
+				img2.style.display="none";
+				hp2.style.display = "none";
+				HP[1].style.display = "none"
+
+				
+
+			}
+			if (gom==23||gom==17||gom==4|| gom==61) {
+				box[gom].style.backgroundImage = "none"
+				alert("иди на 10 шагов вперёд");
+				gom=gom+10;
+				box[gom].style.backgroundImage = "url(2.png)";
+				box[gom].style.backgroundSize = "100% 100%";
+
+				
+
+			}
+			
+			if (gom==10||gom==65||gom==37||gom==54||gom==68||gom==72||gom==18) {
+				box[gom].style.backgroundImage = "none"
+				alert("Ураа, +1 жизнь");
+				sum2=sum2+1;
+				hp2.innerHTML = sum2;
+			}
+
+			if (gom==79||gom==80||gom==81||gom==82||gom==83||gom==84||gom==85) {
+				box[gom].style.backgroundImage = "none";
+				alert("игрок 2 выиграл, конец игры");
+				
+
+				
+
+			}
+
+		}
+		img3.onclick = function(){
+
+		
+			let num=Math.random()*6;
+			num=Math.round(num);
+			
+			box[go].style.backgroundImage = "none";
+			go=go+num;
+
+			alert("Выпало "+num+" иди на клетку "+go);
+			box[go].style.backgroundImage = "url(3.png)";
+			box[go].style.backgroundSize = "100% 100%";
+			
+			if (go ==25 || go ==50|| go ==75) {
+				box[go].style.backgroundImage = "none"
+				alert("возвращайся на 20 шагов назад, и ты получил урон -5");
+				go=go-20;
+				box[go].style.backgroundImage = "url(3.png)";
+				box[go].style.backgroundSize = "100% 100%";
+
+				sum3=sum1-5;
+				hp3.innerHTML = sum3
+
+				
+			}
+			if (go==13||go==20||go==28) {
+				box[go].style.backgroundImage = "none"
+				alert("возвращайся на 4 шага назад");
+				go=go-4;
+				box[go].style.backgroundImage = "url(3.png)";
+				box[go].style.backgroundSize = "100% 100%";
+				sum3=sum3-2;
+				hp3.innerHTML = sum3
+			}
+			if (go==34||go==66||go==48) {
+				box[go].style.backgroundImage = "none"
+				alert("возвращайся на 2 шага назад");
+				go=go-2;
+				box[go].style.backgroundImage = "url(3.png)";
+				box[go].style.backgroundSize = "100% 100%";
+				sum3=sum3-1;
+				hp3.innerHTML = sum3
+
+			}
+			if (go==7||go==12||go==22||go==44||go==39||go==56||go==70) {
+				box[go].style.backgroundImage = "none";
+				alert("жизнь -3");
+				go=go-1;
+				box[go].style.backgroundImage = "url(3.png)";
+				box[go].style.backgroundSize = "100% 100%";
+				sum3=sum3-3;
+				hp3.innerHTML = sum3;
+
+			}
+			if (go==53) {
+				box[go].style.backgroundImage = "none";
+				alert("к сожалению, ты не сможешь дальше играть(((");
+				text3.style.display="none";
+				img3.style.display="none";
+				hp3.style.display = "none";
+				HP[2].style.display = "none"
+
+				
+
+			}
+			if (go==23||go==17||go==4|| go==61) {
+				box[go].style.backgroundImage = "none"
+				alert("иди на 10 шагов вперёд");
+				go=go+10;
+				box[go].style.backgroundImage = "url(3.png)";
+				box[go].style.backgroundSize = "100% 100%";
+
+				
+
+			}
+			
+			if (go==10||go==65||go==37||go==54||go==68||go==72||go==18) {
+				box[go].style.backgroundImage = "none"
+				alert("Ураа, +1 жизнь");
+				sum3=sum3+1;
+				hp3.innerHTML = sum3;
+			}
+			if (go==79||go==80||go==81||go==82||go==83||go==84||go==85) {
+				box[go].style.backgroundImage = "none";
+				alert("игрок 3 выиграл, конец игры");
+				
+				
+
+				
+
+			}
+
+
+		
+		}
+	
+	
+	
+	
+
+	
+
+	
+
+</script>
